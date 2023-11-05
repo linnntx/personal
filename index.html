@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Personal Page</title>
     <link href="styles.css" rel="stylesheet"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   </head>
   <body>
     <div class="information">
@@ -38,12 +39,22 @@
           <article>
             <p class="interest">Watching movie</p>
           </article>
-          <article>
-            <p class="interest">Taking photo</p>
-          </article>
-          <article>
-            <p class="interest">Shopping</p>
-          </article>
+          <button id="Button">More</button>
+	  <p id="paragraph">click</p>
+      <script>
+      $(document).ready(function(){
+	var paragraphVisibel = true;
+	
+        $("#Button").click(function(){
+          if(paragraphVisibel){
+		$("#paragraph").hide();
+	  }else{
+		$("#paragraph").html("Taking photo<br>Shopping").show();
+	  }
+	  paragraphVisibel = !paragraphVisibel;
+        });
+      });
+     </script>
         </section>
       </main>
       <hr class="bottom-line">
